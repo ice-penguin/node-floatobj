@@ -8,6 +8,10 @@
 npm install node-floatobj
 ```
 
+> [download](<https://github.com/ice-penguin/node_floatobj>) form GitHub
+>
+> 从github[下载](<https://github.com/ice-penguin/node_floatobj>)
+
 > copy code
 >
 > 复制以下代码
@@ -122,10 +126,6 @@ var floatObj = function() {
 //直接初始化使用
 var floatObj = floatObj();
 ```
-
-> [download](<https://github.com/ice-penguin/node_floatobj>) form GitHub
->
-> 从github[下载](<https://github.com/ice-penguin/node_floatobj>)
 
 ## Introduce 模块说明
 
