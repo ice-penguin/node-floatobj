@@ -1,6 +1,6 @@
 {
   "name": "node-floatobj",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "计算中浮点数精度",
   "main": "index.js",
   "scripts": {
@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/ice-penguin/node-floatobj/issues"
   },
-  "homepage": "https://github.com/ice-penguin/node-floatobj#readme"
+  "homepage": "https://github.com/ice-penguin/node-floatobj#readme",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  }
 }
