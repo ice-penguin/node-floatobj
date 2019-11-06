@@ -1,6 +1,6 @@
 {
   "name": "node-floatobj",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "计算中浮点数精度",
   "main": "index.js",
   "scripts": {
