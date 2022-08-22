@@ -20,14 +20,21 @@ npm install node-floatobj
 var floatObj = function() {
 
     function dealNumber(num,digits){
+        // console.log(num,digits);
         // var num2=num.toFixed(digits+1);
         // return  parseFloat(num2.substring(0,num2.lastIndexOf('.')+(digits+1)));
-        var num2=num.toFixed(digits+2);
+        var num2=num.toFixed(digits+1);
+        // console.log("num2",num2);
         //获取2位数的数字
         num2=parseFloat(num2.substring(0,num2.lastIndexOf('.')+(digits+1)));
+        // console.log("num2",num2);
         //弥补精度问题，乘以100，加上0.5
-        num2 = parseInt(num2*100 + (num2>0?0.5:-0.5))/100;
-
+        var uplevel = Math.pow(10,digits+1);
+        num2 = parseInt(num2*uplevel + (num2>0?0.5:-0.5))/uplevel;
+        // console.log("num2",num2);
+        if(num2 == -0){
+            num2 = 0;
+        }
         return num2;
     };
 
@@ -38,7 +45,7 @@ var floatObj = function() {
         //计算出小数位
         var times = Math.pow(10,index>-1?len-(index+1):0)
         return {
-            num:dealNumber(num * times,digits),
+            num:dealNumber(num * times,0),
             times:times
         }
     }
@@ -102,16 +109,16 @@ var floatObj = function() {
  
     // 加减乘除的四个接口,digits精度，保留几位小数
     function add(a, b, digits) {
-        return operation(a, b, digits || 2, 'add')
+        return operation(a || 0, b || 0, digits || 2, 'add')
     }
     function subtract(a, b, digits) {
-        return operation(a, b, digits || 2, 'subtract')
+        return operation(a || 0, b || 0, digits || 2, 'subtract')
     }
     function multiply(a, b, digits) {
-        return operation(a, b, digits || 2, 'multiply')
+        return operation(a || 0, b || 0, digits || 2, 'multiply')
     }
     function divide(a, b, digits) {
-        return operation(a, b, digits || 2, 'divide')
+        return operation(a || 0, b || 0, digits || 2, 'divide')
     }
  
     // exports
